@@ -8,15 +8,15 @@ var hashHistory = require('react-router').hashHistory;
 
 console.log(JSON.stringify(hashHistory));
 var Base = require('./components/Base.jsx');
-var Page1 = require('./components/Page1.jsx');
-var Page2 = require('./components/Page2.jsx');
+var About = require('./components/About.jsx');
+var Order = require('./components/Order.jsx');
 
 
 var Routes = (
     <Router history ={hashHistory}>
         <Route path="/" component={Base} >
-            <Route path="/page1" component={Page1} />
-            <Route path="/page2" component={Page2} />
+            <Route path="/about" component={About} />
+            <Route path="/order" component={Order} />
 
         </Route>
     </Router>

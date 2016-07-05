@@ -25062,8 +25062,8 @@ var hashHistory = require('react-router').hashHistory;
 
 console.log(JSON.stringify(hashHistory));
 var Base = require('./components/Base.jsx');
-var Page1 = require('./components/Page1.jsx');
-var Page2 = require('./components/Page2.jsx');
+var About = require('./components/About.jsx');
+var Order = require('./components/Order.jsx');
 
 var Routes = React.createElement(
     Router,
@@ -25073,43 +25073,267 @@ var Routes = React.createElement(
         Route,
         { path: '/', component: Base, __self: this
         },
-        React.createElement(Route, { path: '/page1', component: Page1, __self: this
+        React.createElement(Route, { path: '/about', component: About, __self: this
         }),
-        React.createElement(Route, { path: '/page2', component: Page2, __self: this
+        React.createElement(Route, { path: '/order', component: Order, __self: this
         })
     )
 );
 
 module.exports = Routes;
 
-},{"./components/Base.jsx":231,"./components/Page1.jsx":232,"./components/Page2.jsx":233,"react":228,"react-router":31}],231:[function(require,module,exports){
+},{"./components/About.jsx":231,"./components/Base.jsx":232,"./components/Order.jsx":233,"react":228,"react-router":31}],231:[function(require,module,exports){
+var React = require('react');
+
+var About = React.createClass({
+    displayName: "About",
+
+
+    render: function () {
+
+        var Aboutstyle = {
+            borderTop: "coral 40px solid"
+        };
+
+        return React.createElement(
+            "div",
+            { className: "row", style: Aboutstyle, __self: this
+            },
+            React.createElement(
+                "div",
+                { className: "col-md-2 col-md-offset-1 ali", __self: this
+                },
+                React.createElement("img", { src: "img/ali.png", alt: "ali", className: "avatar clip-circle", __self: this
+                }),
+                React.createElement(
+                    "h2",
+                    { className: "name ali", __self: this
+                    },
+                    "Alessandra  Villaamil"
+                ),
+                React.createElement(
+                    "p",
+                    { className: "role", __self: this
+                    },
+                    "Researcher"
+                )
+            ),
+            React.createElement(
+                "div",
+                { className: "col-md-2 col-md-offset-2 priscilla", __self: this
+                },
+                React.createElement("img", { src: "img/priscilla.png", alt: "priscilla", className: "avatar clip-circle", __self: this
+                }),
+                React.createElement(
+                    "h2",
+                    { className: "name priscilla", __self: this
+                    },
+                    "Priscilla",
+                    React.createElement("br", {
+                        __self: this
+                    }),
+                    "Colon"
+                ),
+                React.createElement(
+                    "p",
+                    { className: "role", __self: this
+                    },
+                    "Baker"
+                )
+            ),
+            React.createElement(
+                "div",
+                { className: "col-md-2 col-md-offset-2 alex", __self: this
+                },
+                React.createElement("img", { src: "img/alex.png", alt: "alex", className: "avatar clip-circle", __self: this
+                }),
+                React.createElement(
+                    "h2",
+                    { className: "name alex", __self: this
+                    },
+                    "Alexander Kozovski"
+                ),
+                React.createElement(
+                    "p",
+                    { className: "role", __self: this
+                    },
+                    "Pastelitos aficionado"
+                )
+            )
+        );
+    }
+});
+
+module.exports = About;
+
+},{"react":228}],232:[function(require,module,exports){
 var React = require('react');
 
 var Base = React.createClass({
-    displayName: 'Base',
+    displayName: "Base",
 
 
     render: function () {
 
         return React.createElement(
-            'div',
-            {
-                __self: this
+            "div",
+            { className: "jumbotron wave", __self: this
             },
             React.createElement(
-                'h1',
-                {
-                    __self: this
+                "div",
+                { className: "container", __self: this
                 },
-                'Header'
+                React.createElement(
+                    "div",
+                    { className: "row>", __self: this
+                    },
+                    React.createElement(
+                        "div",
+                        { className: "col-md-8", __self: this
+                        },
+                        React.createElement(
+                            "div",
+                            { className: "page-header", __self: this
+                            },
+                            React.createElement(
+                                "h1",
+                                {
+                                    __self: this
+                                },
+                                React.createElement(
+                                    "div",
+                                    { className: "main_title", __self: this
+                                    },
+                                    React.createElement(
+                                        "a",
+                                        { className: "deco-none", href: "#/", __self: this
+                                        },
+                                        "Pastelitos"
+                                    ),
+                                    React.createElement(
+                                        "span",
+                                        { className: "definition", __self: this
+                                        },
+                                        "- little pastries"
+                                    )
+                                )
+                            ),
+                            React.createElement(
+                                "p",
+                                { className: "desc", __self: this
+                                },
+                                "Authentic Cuban puff pastries filled with tropical fruit and latin sabor. ",
+                                React.createElement("br", {
+                                    __self: this
+                                }),
+                                "Handmade in Brooklyn with love."
+                            )
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "social col-md-4", __self: this
+                        },
+                        React.createElement(
+                            "ul",
+                            { className: "nav nav-pills nav-justified", __self: this
+                            },
+                            React.createElement(
+                                "li",
+                                { role: "presentation", __self: this
+                                },
+                                React.createElement(
+                                    "a",
+                                    { href: "#/about", __self: this
+                                    },
+                                    "about us"
+                                )
+                            ),
+                            React.createElement(
+                                "li",
+                                { role: "presentation", __self: this
+                                },
+                                React.createElement(
+                                    "a",
+                                    { href: "#/order", __self: this
+                                    },
+                                    "order"
+                                )
+                            ),
+                            React.createElement(
+                                "li",
+                                { role: "presentation", __self: this
+                                },
+                                React.createElement(
+                                    "a",
+                                    { href: "#", __self: this
+                                    },
+                                    React.createElement("i", { className: "fa fa-twitter", "aria-hidden": "true", __self: this
+                                    })
+                                )
+                            )
+                        )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "row", __self: this
+                    },
+                    React.createElement(
+                        "div",
+                        { className: "col-md-5 col-md-offset-0", __self: this
+                        },
+                        React.createElement("img", { src: "img/pastelito.jpg", alt: "pastelito", className: "clip-circle_lg pastelito", __self: this
+                        })
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "col-md-4", __self: this
+                        },
+                        React.createElement(
+                            "ul",
+                            { className: "ingredient_list", __self: this
+                            },
+                            React.createElement(
+                                "li",
+                                { className: "ingredients", __self: this
+                                },
+                                "Guava"
+                            ),
+                            React.createElement(
+                                "li",
+                                { className: "ingredients", __self: this
+                                },
+                                "Mango"
+                            ),
+                            React.createElement(
+                                "li",
+                                { className: "ingredients", __self: this
+                                },
+                                "Coconut"
+                            ),
+                            React.createElement(
+                                "li",
+                                { className: "ingredients", __self: this
+                                },
+                                "Fresh Cheese"
+                            ),
+                            React.createElement(
+                                "li",
+                                { className: "ingredients", __self: this
+                                },
+                                "Meat"
+                            )
+                        )
+                    )
+                )
             ),
-            this.props.children,
             React.createElement(
-                'h1',
+                "div",
                 {
                     __self: this
                 },
-                'Footer'
+                this.props.children
             )
         );
     }
@@ -25118,48 +25342,62 @@ var Base = React.createClass({
 
 module.exports = Base;
 
-},{"react":228}],232:[function(require,module,exports){
-var React = require('react');
-
-var Page1 = React.createClass({
-    displayName: 'Page1',
-
-
-    render: function () {
-
-        return React.createElement(
-            'h1',
-            {
-                __self: this
-            },
-            'Page1'
-        );
-    }
-});
-
-module.exports = Page1;
-
 },{"react":228}],233:[function(require,module,exports){
 var React = require('react');
 
-var Page2 = React.createClass({
-    displayName: 'Page2',
+var Order = React.createClass({
+    displayName: "Order",
 
 
     render: function () {
 
+        var Orderstyle = {
+            borderTop: "coral 40px solid"
+        };
         return React.createElement(
-            'h1',
-            {
-                __self: this
+            "div",
+            { className: "row", style: Orderstyle, __self: this
             },
-            'Page2'
+            React.createElement(
+                "div",
+                { className: "col-md-6 col-md-offset-3", __self: this
+                },
+                React.createElement(
+                    "div",
+                    { className: "alpha", __self: this
+                    },
+                    "We are in a closed alpha now, but if you are interested in trying our pastelitos, enter your info below and we will be in touch soon"
+                )
+            ),
+            React.createElement(
+                "div",
+                { className: "col-md-6 col-md-offset-5", __self: this
+                },
+                React.createElement(
+                    "form",
+                    { className: "form-inline", __self: this
+                    },
+                    React.createElement(
+                        "div",
+                        { className: "form-group", __self: this
+                        },
+                        React.createElement("input", { type: "email", className: "form-control", classID: "exampleInputEmail2", placeholder: "email address", __self: this
+                        })
+                    ),
+                    React.createElement(
+                        "button",
+                        { type: "submit", className: "btn btn-default", __self: this
+                        },
+                        "Submit"
+                    )
+                )
+            )
         );
     }
 
 });
 
-module.exports = Page2;
+module.exports = Order;
 
 },{"react":228}],234:[function(require,module,exports){
 var React = require('react');

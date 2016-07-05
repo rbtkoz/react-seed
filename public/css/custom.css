@@ -1,0 +1,122 @@
+.social {
+    margin-top: 50px;
+
+}
+
+h1 .main_title{
+    font-weight:300;
+    color:coral;
+}
+
+.wave {
+
+    background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
+    radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
+    radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+    background-size:110px 210px;
+    background-repeat:repeat-x;
+    padding-bottom:20px;
+}
+
+.jumbotron{
+    padding-top:5px;
+}
+
+.desc{
+    color:ghostwhite;
+    margin-top:25px;
+
+}
+
+
+.definition{
+    font-size:16px;
+    font-style: italic;
+    color:darkslategray;
+    margin-left:10px;
+}
+
+img.avatar {
+    width: 120px;
+    margin: 45px;
+}
+
+.pastelito {
+    width: 480px;
+    margin: 20px;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+
+.clip-circle {
+    -webkit-clip-path: circle(60px at center);
+    clip-path: circle(60px at center);
+}
+
+.clip-circle_lg {
+    -webkit-clip-path: circle(180px at center);
+    clip-path: circle(120px at center);
+}
+
+.name{
+    text-align:center;
+    font-size:28px;
+    color:ghostwhite;
+
+
+}
+
+.name {
+    margin:10px;
+}
+
+
+.role{
+    text-align:center;
+    font-size:21px;
+    color:ghostwhite;
+}
+
+.ali{
+    margin-top:8px;
+}
+
+.alex{
+    margin-top:10px;
+}
+
+.alpha {
+    font-size:21px;
+    color:ghostwhite;
+    font-style: italic;
+    padding:20px 0px 20px 0px;
+    text-align:center;
+    font-weight:200;
+}
+
+.btn{
+    margin-left:10px;
+}
+
+a.deco-none {
+    text-decoration:none;
+    font-weight:300;
+    color:coral !important;
+
+}
+ul{
+    list-style:none;
+}
+
+.ingredients{
+    font-size:36px;
+    color:whitesmoke;
+
+}
+
+.ingredient_list{
+    margin-top: 60px;
+
+}
