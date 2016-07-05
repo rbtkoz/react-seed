@@ -47,7 +47,7 @@ var Base = React.createClass({
                 </div>
                 <div>
                     {this.props.children}
-                    <   /div>
+                    </div>
             </div>
 
 

@@ -25082,7 +25082,7 @@ var Routes = React.createElement(
 
 module.exports = Routes;
 
-},{"./components/About.jsx":231,"./components/Base.jsx":232,"./components/Order.jsx":233,"react":228,"react-router":31}],231:[function(require,module,exports){
+},{"./components/About.jsx":231,"./components/Base.jsx":232,"./components/Order.jsx":236,"react":228,"react-router":31}],231:[function(require,module,exports){
 var React = require('react');
 
 var About = React.createClass({
@@ -25344,6 +25344,148 @@ module.exports = Base;
 
 },{"react":228}],233:[function(require,module,exports){
 var React = require('react');
+var ArticlesList = require('./ArticlesList.jsx');
+
+var ArticleManager = React.createClass({
+    displayName: 'ArticleManager',
+
+
+    getInitialState: function () {
+        return { articles: [] };
+        //     {title:"Article1",
+        //     subtitle:"Subtitle1",
+        //     content:"somecontentsomecontent1",
+        //     image1:"img/alex.png",
+        //     image2:"img/alex.png",
+        //     location:"Istanbul, Turkey"
+        // }
+        // ]};
+    },
+
+    render: function () {
+
+        return React.createElement(
+            'div',
+            {
+                __self: this
+            },
+            React.createElement(ArticlesList, { articles: this.state.articles, __self: this
+            })
+        );
+    }
+});
+
+module.exports = ArticleManager;
+
+},{"./ArticlesList.jsx":234,"react":228}],234:[function(require,module,exports){
+var React = require('react');
+var NewsArticle = require('./NewsArticle.jsx');
+
+var ArticleList = React.createClass({
+    displayName: 'ArticleList',
+
+    render: function () {
+
+        var createArticle = function (obj) {
+            var title = obj.title;
+            var subtitle = obj.subtitle;
+            var content = obj.content;
+            var image1 = obj.image1;
+            var image2 = obj.image2;
+            var location = obj.location;
+            console.log(title, "vartitle");
+            return React.createElement(NewsArticle, {
+                key: 'one',
+                title: title,
+                subtitle: subtitle,
+                content: content,
+                image1: image1,
+                image2: image2,
+                image_poster: image2,
+                location: location, __self: this
+            });
+        };
+
+        console.log(this.props.articles, "articles");
+        return React.createElement(
+            'ul',
+            {
+                __self: this
+            },
+            this.props.articles.map(createArticle)
+        );
+    }
+
+});
+
+module.exports = ArticleList;
+
+},{"./NewsArticle.jsx":235,"react":228}],235:[function(require,module,exports){
+var React = require('react');
+
+var NewsArticle = React.createClass({
+    displayName: "NewsArticle",
+
+
+    render: function () {
+        console.log(this.props, "this.props");
+
+        return React.createElement(
+            "div",
+            { className: "row", __self: this
+            },
+            React.createElement(
+                "div",
+                { className: "col-md-2", __self: this
+                },
+                React.createElement("img", { src: this.props.image_poster, __self: this
+                })
+            ),
+            React.createElement(
+                "div",
+                { className: "col-md-8", __self: this
+                },
+                React.createElement(
+                    "h1",
+                    {
+                        __self: this
+                    },
+                    this.props.title
+                ),
+                React.createElement(
+                    "h2",
+                    {
+                        __self: this
+                    },
+                    this.props.subtitle
+                ),
+                React.createElement(
+                    "p",
+                    {
+                        __self: this
+                    },
+                    this.props.content
+                ),
+                React.createElement("img", { src: this.props.image1, __self: this
+                }),
+                React.createElement("img", { src: this.props.image2, __self: this
+                }),
+                React.createElement(
+                    "h4",
+                    {
+                        __self: this
+                    },
+                    this.props.location
+                )
+            )
+        );
+    }
+});
+
+module.exports = NewsArticle;
+
+},{"react":228}],236:[function(require,module,exports){
+var React = require('react');
 
 var Order = React.createClass({
     displayName: "Order",
@@ -25399,11 +25541,17 @@ var Order = React.createClass({
 
 module.exports = Order;
 
-},{"react":228}],234:[function(require,module,exports){
+},{"react":228}],237:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Routes = require('./Routes.jsx');
+var ArticleManager = require('./components/News/ArticleManager.jsx');
 
 ReactDOM.render(Routes, document.getElementById('main'));
+// ReactDOM.render(<ArticleManager/>, document.getElementById('article'));
+// ReactDOM.render(<ArticleManager/>, document.getElementById('article1'));
+// ReactDOM.render(<ArticleManager/>, document.getElementById('article2'));
+// ReactDOM.render(<ArticleManager/>, document.getElementById('article3'));
+// ReactDOM.render(<ArticleManager/>, document.getElementById('article4'));
 
-},{"./Routes.jsx":230,"react":228,"react-dom":1}]},{},[234]);
+},{"./Routes.jsx":230,"./components/News/ArticleManager.jsx":233,"react":228,"react-dom":1}]},{},[237]);
