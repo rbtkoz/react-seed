@@ -19691,77 +19691,221 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],168:[function(require,module,exports){
-var React = require("react");
-var ListItem = require('./ListItem.jsx');
+var React = require('react');
 
-var List = React.createClass({
-    displayName: "List",
+var LocationItem = React.createClass({
+    displayName: "LocationItem",
+
 
     render: function () {
-        var createItem = function (text, index) {
-            return React.createElement(ListItem, { key: index + text, text: text, body: text, index: index + text, __self: this
-            });
+
+        var liStyle = {
+            paddingTop: 10
+        };
+        var fontStyle = {
+            color: "white"
         };
         return React.createElement(
-            "ul",
-            {
-                __self: this
-            },
-            this.props.items.map(createItem)
-        );
-    }
-});
-
-module.exports = List;
-
-},{"./ListItem.jsx":169,"react":166}],169:[function(require,module,exports){
-var React = require('react');
-var ListItem = React.createClass({
-    displayName: 'ListItem',
-
-    render: function () {
-        return React.createElement(
-            'li',
+            "div",
             {
                 __self: this
             },
             React.createElement(
-                'h4',
+                "div",
+                { className: "col-md-4 text-center", __self: this
+                },
+                React.createElement(
+                    "li",
+                    { style: liStyle, __self: this
+                    },
+                    React.createElement(
+                        "h4",
+                        { style: fontStyle, __self: this
+                        },
+                        this.props.views
+                    ),
+                    React.createElement(
+                        "h4",
+                        { "text-muted": true, small: true, __self: this
+                        },
+                        "Shot Views"
+                    )
+                )
+            ),
+            React.createElement(
+                "div",
+                { className: "col-md-4 text-center", __self: this
+                },
+                React.createElement(
+                    "li",
+                    { style: liStyle, __self: this
+                    },
+                    React.createElement(
+                        "h4",
+                        { style: fontStyle, __self: this
+                        },
+                        this.props.likes
+                    ),
+                    React.createElement(
+                        "h4",
+                        { "text-muted": true, small: true, __self: this
+                        },
+                        "Likes"
+                    )
+                )
+            ),
+            React.createElement(
+                "div",
+                { className: "col-md-4 text-center", __self: this
+                },
+                React.createElement(
+                    "li",
+                    { style: liStyle, __self: this
+                    },
+                    React.createElement(
+                        "h4",
+                        { style: fontStyle, __self: this
+                        },
+                        this.props.comments
+                    ),
+                    React.createElement(
+                        "h4",
+                        { "text-muted": true, small: true, __self: this
+                        },
+                        "Comments"
+                    )
+                )
+            )
+        );
+    }
+
+});
+module.exports = LocationItem;
+
+},{"react":166}],169:[function(require,module,exports){
+var React = require('react');
+var LocationItem = require('./LocationItem.jsx');
+
+var LocationList = React.createClass({
+    displayName: 'LocationList',
+
+
+    render: function () {
+        return React.createElement(LocationItem, { views: this.props.views, likes: this.props.likes, comments: this.props.comments, __self: this
+        });
+    }
+});
+
+module.exports = LocationList;
+
+},{"./LocationItem.jsx":168,"react":166}],170:[function(require,module,exports){
+var React = require('react');
+var LocationList = require('./LocationList.jsx');
+
+var LocationListManager = React.createClass({
+    displayName: 'LocationListManager',
+
+
+    render: function () {
+
+        var divStyle = {
+            height: 300,
+            backgroundColor: '#262626'
+        };
+
+        var headingStyle = {
+            height: 200
+
+        };
+
+        if (this.props.headingColor) {
+            headingStyle.background = this.props.headingColor;
+        }
+
+        return React.createElement(
+            'div',
+            { style: divStyle, className: 'panel panel-primary', __self: this
+            },
+            React.createElement('div', { style: headingStyle, className: 'panel-heading col-md-12', __self: this
+            }),
+            React.createElement(LocationList, { views: this.props.views, likes: this.props.likes, comments: this.props.comments, __self: this
+            })
+        );
+    }
+});
+
+module.exports = LocationListManager;
+
+},{"./LocationList.jsx":169,"react":166}],171:[function(require,module,exports){
+var React = require('react');
+
+var StatItem = React.createClass({
+    displayName: "StatItem",
+
+    render: function () {
+        return React.createElement(
+            "div",
+            {
+                __self: this
+            },
+            React.createElement(
+                "h3",
                 {
                     __self: this
                 },
-                this.props.text
+                this.props.title
+            ),
+            React.createElement(
+                "h4",
+                { className: "text-muted small", __self: this
+                },
+                this.props.sl_desc
             )
         );
     }
 });
 
-module.exports = ListItem;
+module.exports = StatItem;
 
-},{"react":166}],170:[function(require,module,exports){
+},{"react":166}],172:[function(require,module,exports){
 var React = require('react');
-var List = require("./List.jsx");
+var StatItem = require('./StatItem.jsx');
 
-var ListManager = React.createClass({
-    displayName: 'ListManager',
+var StatList = React.createClass({
+    displayName: 'StatList',
+
+    render: function () {
+        return React.createElement(StatItem, { title: this.props.title, sl_desc: this.props.lm_desc, __self: this
+        });
+    }
+
+});
+module.exports = StatList;
+
+},{"./StatItem.jsx":171,"react":166}],173:[function(require,module,exports){
+var React = require('react');
+var StatList = require("./StatList.jsx");
+
+var StatListManager = React.createClass({
+    displayName: "StatListManager",
 
     getInitialState: function () {
-        return { items: [], newItemText: '' };
+        return {};
+        // return {items:
+        //     [
+        //         "New followers added this month",
+        //         "Average Monthly Users",
+        //          "Yearly Income Goal"
+        //     ]
+        // };
     },
-    onChange: function (e) {
-        this.setState({ newItemText: e.target.value });
-    },
-    handleSubmit: function (e) {
-        e.preventDefault();
-        var currentItems = this.state.items;
-        currentItems.push(this.state.newItemText);
-        this.setState({ items: currentItems, newItemText: '' });
-    },
+    onChange: function (e) {},
 
     render: function () {
 
         var divStyle = {
-            marginTop: 10
+            margin: 10,
+            padding: 50
         };
 
         var headingStyle = {};
@@ -19770,75 +19914,33 @@ var ListManager = React.createClass({
             headingStyle.background = this.props.headingColor;
         }
         return React.createElement(
-            'div',
-            { style: divStyle, className: 'col-sm-4', __self: this
+            "div",
+            { style: divStyle, className: "col-md-3 panel", __self: this
             },
-            React.createElement(
-                'div',
-                { className: 'panel panel-primary', __self: this
-                },
-                React.createElement(
-                    'div',
-                    { style: headingStyle, className: 'panel-heading', __self: this
-                    },
-                    React.createElement(
-                        'h3',
-                        {
-                            __self: this
-                        },
-                        this.props.title
-                    )
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'row panel-body', __self: this
-                    },
-                    React.createElement(
-                        'form',
-                        { onSubmit: this.handleSubmit, __self: this
-                        },
-                        React.createElement(
-                            'div',
-                            { className: 'col-sm-9', __self: this
-                            },
-                            React.createElement('input', { className: 'form-control', onChange: this.onChange, value: this.state.newItemText, __self: this
-                            })
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'col-sm-2', __self: this
-                            },
-                            React.createElement(
-                                'button',
-                                { className: 'btn btn-primary', __self: this
-                                },
-                                'Add'
-                            )
-                        )
-                    )
-                ),
-                React.createElement(List, { items: this.state.items, __self: this
-                })
-            )
+            React.createElement(StatList, { lm_desc: this.props.main_desc, title: this.props.title, __self: this
+            })
         );
     }
 
 });
 
-module.exports = ListManager;
+module.exports = StatListManager;
 
-},{"./List.jsx":168,"react":166}],171:[function(require,module,exports){
+},{"./StatList.jsx":172,"react":166}],174:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
-var ListManager = require('./components/ListManager.jsx');
+var StatListManager = require('./components/StatListManager.jsx');
+var LocationListManager = require('./components/LocationListManager.jsx');
 
-ReactDOM.render(React.createElement(ListManager, { title: 'Ingredients', __self: this
-}), document.getElementById('ingredients'));
-ReactDOM.render(React.createElement(ListManager, { title: 'ToDo', __self: this
-}), document.getElementById('todo'));
-ReactDOM.render(React.createElement(ListManager, { headingColor: 'yellow', title: 'Music', __self: this
-}), document.getElementById('music'));
-ReactDOM.render(React.createElement(ListManager, { headingColor: 'tomato', title: 'Brian', __self: this
-}), document.getElementById('brian'));
+ReactDOM.render(React.createElement(StatListManager, { headingColor: 'tomato', title: '20', main_desc: 'New followers added this month', __self: this
+}), document.getElementById('stat20'));
+ReactDOM.render(React.createElement(StatListManager, { headingColor: 'tomato', title: '$ 1250', main_desc: 'Average Monthly Income', __self: this
+}), document.getElementById('stat1250'));
+ReactDOM.render(React.createElement(StatListManager, { headingColor: 'tomato', title: '$ 13865', main_desc: 'Yearly Income Goal', __self: this
+}), document.getElementById('stat13865'));
+ReactDOM.render(React.createElement(LocationListManager, { views: '15080', likes: '12000', comments: '5100', __self: this
+}), document.getElementById('loc15080'));
+ReactDOM.render(React.createElement(LocationListManager, { headingColor: '#ff69b4', views: '15080', likes: '12000', comments: '5100', __self: this
+}), document.getElementById('loc15080pink'));
 
-},{"./components/ListManager.jsx":170,"react":166,"react-dom":1}]},{},[171]);
+},{"./components/LocationListManager.jsx":170,"./components/StatListManager.jsx":173,"react":166,"react-dom":1}]},{},[174]);
