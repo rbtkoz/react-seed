@@ -25759,7 +25759,7 @@ var Base = React.createClass({
                     { className: "row" },
                     React.createElement(
                         "div",
-                        { className: "col-md-8" },
+                        { className: "col-md-8 col-sm-7" },
                         React.createElement(
                             "div",
                             { className: "page-header" },
@@ -25792,7 +25792,7 @@ var Base = React.createClass({
                     ),
                     React.createElement(
                         "div",
-                        { className: "social col-md-4" },
+                        { className: "social col-md-4 col-sm-5" },
                         React.createElement(
                             "ul",
                             { className: "nav nav-pills nav-justified" },
@@ -25831,12 +25831,12 @@ var Base = React.createClass({
                     { className: "row" },
                     React.createElement(
                         "div",
-                        { className: "col-md-6 col-sm-6 main_img" },
+                        { className: "col-md-6 col-sm-6 col-xs-0 main_img" },
                         React.createElement("img", { src: "img/pastelito.jpg", alt: "pastelito", className: "clip-circle_lg pastelito" })
                     ),
                     React.createElement(
                         "div",
-                        { className: "col-md-6 col-sm-12" },
+                        { className: "col-md-6 col-sm-6 hidden-xs" },
                         React.createElement(
                             "ul",
                             { className: "ingredient_list" },

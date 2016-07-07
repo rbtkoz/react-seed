@@ -11,13 +11,13 @@ var Base = React.createClass({
 
 
                     <div className ="row">
-                        <div className ="col-md-8">
+                        <div className ="col-md-8 col-sm-7">
                             <div className="page-header">
                                 <h1><div className="main_title"><a className ="deco-none" href="#/">Pastelitos</a><span className="definition">- little pastries</span></div></h1>
                                 <p className ="desc">Authentic Cuban puff pastries filled with tropical fruit and latin sabor. <br></br>Handmade in Brooklyn with love.</p>
                             </div>
                         </div>
-                        <div className ="social col-md-4">
+                        <div className ="social col-md-4 col-sm-5">
                             <ul className="nav nav-pills nav-justified">
                                 <li role="presentation"><a href="#/about">about us</a></li>
                                 <li role="presentation"><a href="#/order">order</a></li>
@@ -28,11 +28,11 @@ var Base = React.createClass({
 
 
                     <div className="row">
-                        <div className="col-md-6 col-sm-6 main_img">
+                        <div className="col-md-6 col-sm-6 col-xs-0 main_img">
                             <img src="img/pastelito.jpg" alt="pastelito" className="clip-circle_lg pastelito"/>
                         </div>
 
-                        <div className="col-md-6 col-sm-12">
+                        <div className="col-md-6 col-sm-6 hidden-xs">
                             <ul className="ingredient_list">
                                 <li className="ingredients">Guava</li>
                                 <li className="ingredients">Mango</li>

@@ -20,7 +20,9 @@ h1 .main_title{
     background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
     radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
     radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
-    background-size:110px 210px;
+    /*background-size:110px 210px;*/
+    -webkit-background-size:3px 250px;
+    background-size:3px 250px;
     background-repeat:repeat-x;
     padding-bottom:20px;
 }
@@ -61,6 +63,8 @@ img.avatar {
     border-radius: 50%;
     border: 10px solid white;
     margin-bottom:20px;
+    -webkit-filter: saturate(130%);
+    filter: saturate(130%);
 }
 
 
