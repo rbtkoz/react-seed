@@ -10,7 +10,7 @@ var Base = React.createClass({
                 <div className = "container">
 
 
-                    <div className ="row>">
+                    <div className ="row">
                         <div className ="col-md-8">
                             <div className="page-header">
                                 <h1><div className="main_title"><a className ="deco-none" href="#/">Pastelitos</a><span className="definition">- little pastries</span></div></h1>
@@ -28,17 +28,17 @@ var Base = React.createClass({
 
 
                     <div className="row">
-                        <div className="col-md-5 col-md-offset-0">
-                            <img src="img/pastelito.jpg" alt="pastelito" className="clip-circle_lg pastelito"></img>
+                        <div className="col-md-6 col-sm-6 main_img">
+                            <img src="img/pastelito.jpg" alt="pastelito" className="clip-circle_lg pastelito"/>
                         </div>
 
-                        <div className="col-md-4">
+                        <div className="col-md-6 col-sm-12">
                             <ul className="ingredient_list">
                                 <li className="ingredients">Guava</li>
                                 <li className="ingredients">Mango</li>
                                 <li className="ingredients">Coconut</li>
                                 <li className="ingredients">Fresh Cheese</li>
-                                <li className="ingredients">Meat</li>
+                                <li className="ingredients">Picadillo</li>
                             </ul>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ var Base = React.createClass({
                 </div>
                 <div>
                     {this.props.children}
-                    </div>
+                </div>
             </div>
 
 

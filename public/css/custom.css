@@ -1,8 +1,15 @@
+body{
+    overflow-x:hidden;
+}
+
 .social {
     margin-top: 50px;
 
 }
 
+.page-header{
+    border:none;
+}
 h1 .main_title{
     font-weight:300;
     color:coral;
@@ -24,8 +31,9 @@ h1 .main_title{
 
 .desc{
     color:ghostwhite;
-    margin-top:25px;
-
+    margin-top:50px;
+    margin-left:0;
+    padding-left:0;
 }
 
 
@@ -39,14 +47,20 @@ h1 .main_title{
 img.avatar {
     width: 120px;
     margin: 45px;
+    display: block;
+    margin: 20px auto;
+
 }
 
 .pastelito {
-    width: 480px;
-    margin: 20px;
+    width: 340px;
+    height:340px;
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
+    border-radius: 50%;
+    border: 10px solid white;
+    margin-bottom:20px;
 }
 
 
@@ -55,17 +69,19 @@ img.avatar {
     clip-path: circle(60px at center);
 }
 
-.clip-circle_lg {
-    -webkit-clip-path: circle(180px at center);
-    clip-path: circle(120px at center);
-}
+/*.clip-circle_lg {*/
+    /*-webkit-clip-path: circle(140px at center);*/
+    /*clip-path: circle(150px at center);*/
+
+
+
+
+/*}*/
 
 .name{
     text-align:center;
     font-size:28px;
     color:ghostwhite;
-
-
 }
 
 .name {
@@ -91,7 +107,7 @@ img.avatar {
     font-size:21px;
     color:ghostwhite;
     font-style: italic;
-    padding:20px 0px 20px 0px;
+    padding:20px 10px 20px 10px;
     text-align:center;
     font-weight:200;
 }
@@ -119,4 +135,15 @@ ul{
 .ingredient_list{
     margin-top: 60px;
 
+}
+
+li a{
+    font-weight:300;
+    font-size:20px;
+    color:coral !important;
+
+}
+
+.row{
+    padding: 0 20px 0 20px;
 }
